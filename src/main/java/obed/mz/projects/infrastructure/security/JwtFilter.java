@@ -28,17 +28,18 @@ public class JwtFilter implements WebFilter {
         ServerHttpRequest request = exchange.getRequest();
         String path = request.getPath().value();
 
-        if (path.contains("auth")) {
+        if (path.contains("/exchange-rate")) {
+            String auth = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
+            if (auth == null || !auth.startsWith("Bearer ")) {
+                return handleUnauthorized(exchange);
+            }
+
+            String token = auth.replace("Bearer ", "");
+            exchange.getAttributes().put("token", token);
             return chain.filter(exchange);
+
         }
 
-        String auth = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
-        if (auth == null || !auth.startsWith("Bearer ")) {
-            return handleUnauthorized(exchange);
-        }
-
-        String token = auth.replace("Bearer ", "");
-        exchange.getAttributes().put("token", token);
         return chain.filter(exchange);
     }
 
