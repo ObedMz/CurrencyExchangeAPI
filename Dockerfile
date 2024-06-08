@@ -6,6 +6,7 @@ WORKDIR /app
 # Copia el código fuente al contenedor
 COPY . /app
 
+RUN chmod +x gradlew
 # Compila la aplicación
 RUN ./gradlew build --no-daemon
 
