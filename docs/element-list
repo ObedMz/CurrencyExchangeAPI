@@ -1,0 +1,8 @@
+obed.mz.projects
+obed.mz.projects.application.controller
+obed.mz.projects.application.exceptions
+obed.mz.projects.application.service
+obed.mz.projects.domain.model
+obed.mz.projects.domain.repositories
+obed.mz.projects.infrastructure.config
+obed.mz.projects.infrastructure.external

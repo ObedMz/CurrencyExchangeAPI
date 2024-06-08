@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS exchange_rate (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    amount DOUBLE PRECISION NOT NULL,
+    converted_amount DOUBLE PRECISION NOT NULL,
+    currency_from VARCHAR(3) NOT NULL,
+    currency_to VARCHAR(3) NOT NULL,
+    rate DOUBLE PRECISION NOT NULL
+);
