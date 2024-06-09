@@ -1,7 +1,8 @@
 # Exchange Rate API
 
 Esta API proporciona operaciones para manejar las tasas de cambio entre diferentes monedas.
-
+Puedes visualizar el proyecto en vivo en el siguiente enlace: https://currency-api-front.vercel.app
+Backend: https://currencyexchangeapi-production.up.railway.app/webjars/swagger-ui/index.html
 ## Controladores
 
 El controlador `ExchangeRateController` maneja las operaciones relacionadas con las tasas de cambio.
@@ -36,7 +37,7 @@ docker run -p 8080:8080 -e JWT_SECRET=your_jwt_secret exchange-rate-api
 ```
 
 ### Documentación
-#### Swagger [Click to visit](https://currencyexchangeapi-qpjx.onrender.com/webjars/swagger-ui/index.html)
+#### Swagger [Click to visit](https://currencyexchangeapi-production.up.railway.app/webjars/swagger-ui/index.html)
 La documentación en swagger la podrás acceder en la siguiente ruta:
 
 - `localhost:8080/webjars/swagger-ui/index.html`
