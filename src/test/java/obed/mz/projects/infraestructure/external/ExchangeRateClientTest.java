@@ -24,6 +24,9 @@ public class ExchangeRateClientTest {
     @MockBean
     private ExchangeRateClient mockExchangeRateClient;
 
+    /**
+     * Prueba la respuesta del método getExchangeRate de ExchangeRateClient.
+     */
     @Test
     public void testGetExchangeRateClient() {
         ExchangeResponse response = new ExchangeResponse("success",

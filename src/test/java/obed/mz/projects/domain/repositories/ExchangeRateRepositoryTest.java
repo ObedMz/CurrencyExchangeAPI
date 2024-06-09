@@ -20,6 +20,9 @@ public class ExchangeRateRepositoryTest {
         exchangeRateRepository.deleteAll().block();
     }
 
+    /**
+     * Prueba la búsqueda de un objeto ExchangeRate por monedas de origen y destino.
+     */
     @Test
     public void testFindByCurrencyFromAndCurrencyTo() {
         ExchangeRate exchangeRate = new ExchangeRate();
@@ -38,6 +41,9 @@ public class ExchangeRateRepositoryTest {
                 .expectNextMatches(rate -> rate.getCurrencyFrom().equals("USD") && rate.getCurrencyTo().equals("EUR"))
                 .verifyComplete();
     }
+    /**
+     * Prueba la búsqueda paginada de todos los objetos ExchangeRate.
+     */
     @Test
     public void testFindAllPaged() {
         for (int i = 0; i < 5; i++) {

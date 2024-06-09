@@ -35,6 +35,10 @@ public class ExchangeRateServiceTest {
     void setup() {
         MockitoAnnotations.openMocks(this);
     }
+
+    /**
+     * Prueba el método convertCurrencyTo cuando la conversión es exitosa.
+     */
     @Test
     void testConvertCurrencyTo_Success() {
         double amount = 100.0;
@@ -68,6 +72,9 @@ public class ExchangeRateServiceTest {
                 .verifyComplete();
     }
 
+    /**
+     * Prueba el método convertCurrencyTo cuando el monto es negativo.
+     */
     @Test
     void testConvertCurrencyTo_NegativeAmount() {
         double amount = -100.0;
@@ -80,6 +87,10 @@ public class ExchangeRateServiceTest {
                 .expectError(CurrencyExchangeException.class)
                 .verify();
     }
+
+    /**
+     * Prueba el método convertCurrencyTo cuando la tasa de cambio no está disponible.
+     */
     @Test
     void testConvertCurrencyTo_ExchangeRateNotAvailable() {
         double amount = 100.0;
@@ -97,6 +108,9 @@ public class ExchangeRateServiceTest {
                 .verify();
     }
 
+    /**
+     * Prueba el método convertCurrencyTo cuando hay un error en el cliente Feign.
+     */
     @Test
     void testConvertCurrencyTo_FeignClientError() {
         double amount = 100.0;
