@@ -25,6 +25,7 @@ public class ExchangeRateClientTest {
     private ExchangeRateClient mockExchangeRateClient;
 
     /**
+     *
      * Prueba la respuesta del método getExchangeRate de ExchangeRateClient.
      */
     @Test
